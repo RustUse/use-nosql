@@ -1,0 +1,105 @@
+[workspace]
+release = false
+release_always = false
+changelog_update = false
+pr_labels = ["release"]
+max_analyze_commits = 2000
+
+[[package]]
+name = "use-document-store"
+release = true
+version_group = "rustuse-nosql"
+
+[[package]]
+name = "use-key-value-store"
+release = true
+version_group = "rustuse-nosql"
+
+[[package]]
+name = "use-wide-column"
+release = true
+version_group = "rustuse-nosql"
+
+[[package]]
+name = "use-graph-store"
+release = true
+version_group = "rustuse-nosql"
+
+[[package]]
+name = "use-cache-store"
+release = true
+version_group = "rustuse-nosql"
+
+[[package]]
+name = "use-search-index"
+release = true
+version_group = "rustuse-nosql"
+
+[[package]]
+name = "use-vector-store"
+release = true
+version_group = "rustuse-nosql"
+
+[[package]]
+name = "use-timeseries-store"
+release = true
+version_group = "rustuse-nosql"
+
+[[package]]
+name = "use-document-path"
+release = true
+version_group = "rustuse-nosql"
+
+[[package]]
+name = "use-partition-key"
+release = true
+version_group = "rustuse-nosql"
+
+[[package]]
+name = "use-consistency"
+release = true
+version_group = "rustuse-nosql"
+
+[[package]]
+name = "use-change-event"
+release = true
+version_group = "rustuse-nosql"
+
+[[package]]
+name = "use-nosql"
+release = true
+version_group = "rustuse-nosql"
+changelog_update = true
+changelog_path = "./CHANGELOG.md"
+changelog_include = [
+    "use-document-store",
+    "use-key-value-store",
+    "use-wide-column",
+    "use-graph-store",
+    "use-cache-store",
+    "use-search-index",
+    "use-vector-store",
+    "use-timeseries-store",
+    "use-document-path",
+    "use-partition-key",
+    "use-consistency",
+    "use-change-event",
+]
+
+[changelog]
+header = """# Changelog
+
+## Unreleased
+"""
+protect_breaking_commits = true
+sort_commits = "oldest"
+commit_parsers = [
+    { message = "^feat(?:\\([^)]+\\))?!?: .+", group = "Added" },
+    { message = "^fix(?:\\([^)]+\\))?!?: .+", group = "Fixed" },
+    { message = "^security(?:\\([^)]+\\))?!?: .+", group = "Security" },
+    { message = "^(?:refactor|perf|change)(?:\\([^)]+\\))?!?: .+", group = "Changed" },
+    { message = "^docs(?:\\([^)]+\\))?!?: .+", group = "Documentation" },
+    { message = "^(?:build|ci|chore|deps|test)(?:\\([^)]+\\))?!?: .+", group = "Tooling" },
+    { footer = "^changelog: ?ignore$", skip = true },
+    { message = "^.*", group = "Changed" },
+]

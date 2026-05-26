@@ -1,0 +1,18 @@
+[package]
+name = "use-document-path"
+description = "Document path primitives for RustUse NoSQL data modeling"
+publish = true
+authors.workspace = true
+version.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+readme = "README.md"
+documentation = "https://docs.rs/use-document-path"
+keywords = ["nosql", "document", "path", "field"]
+categories = ["database", "data-structures", "development-tools"]
+
+[lints]
+workspace = true

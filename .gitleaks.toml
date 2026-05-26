@@ -1,0 +1,5 @@
+title = "RustUse use-nosql gitleaks config"
+
+[allowlist]
+description = "Allow repository examples and generated files"
+paths = ['''Cargo.lock''']

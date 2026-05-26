@@ -1,0 +1,84 @@
+[workspace]
+members = [
+    "crates/use-nosql",
+    "crates/use-document-store",
+    "crates/use-key-value-store",
+    "crates/use-wide-column",
+    "crates/use-graph-store",
+    "crates/use-cache-store",
+    "crates/use-search-index",
+    "crates/use-vector-store",
+    "crates/use-timeseries-store",
+    "crates/use-document-path",
+    "crates/use-partition-key",
+    "crates/use-consistency",
+    "crates/use-change-event",
+]
+resolver = "2"
+
+[workspace.package]
+authors = ["RustUse Contributors"]
+edition = "2024"
+homepage = "https://rustuse.org"
+license = "MIT OR Apache-2.0"
+documentation = "https://rustuse.org"
+publish = false
+readme = "README.md"
+repository = "https://github.com/RustUse/use-nosql"
+rust-version = "1.95.0"
+version = "0.1.0"
+
+[workspace.dependencies]
+use-nosql = { version = "0.1.0", path = "crates/use-nosql" }
+use-document-store = { version = "0.1.0", path = "crates/use-document-store" }
+use-key-value-store = { version = "0.1.0", path = "crates/use-key-value-store" }
+use-wide-column = { version = "0.1.0", path = "crates/use-wide-column" }
+use-graph-store = { version = "0.1.0", path = "crates/use-graph-store" }
+use-cache-store = { version = "0.1.0", path = "crates/use-cache-store" }
+use-search-index = { version = "0.1.0", path = "crates/use-search-index" }
+use-vector-store = { version = "0.1.0", path = "crates/use-vector-store" }
+use-timeseries-store = { version = "0.1.0", path = "crates/use-timeseries-store" }
+use-document-path = { version = "0.1.0", path = "crates/use-document-path" }
+use-partition-key = { version = "0.1.0", path = "crates/use-partition-key" }
+use-consistency = { version = "0.1.0", path = "crates/use-consistency" }
+use-change-event = { version = "0.1.0", path = "crates/use-change-event" }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+cargo = { level = "warn", priority = -1 }
+doc_markdown = "allow"
+derivable_impls = "allow"
+expect_used = "allow"
+missing_const_for_fn = "allow"
+missing_errors_doc = "allow"
+module_name_repetitions = "allow"
+must_use_candidate = "allow"
+multiple_crate_versions = "allow"
+return_self_not_must_use = "allow"
+nursery = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+todo = "deny"
+unimplemented = "deny"
+unwrap_used = "warn"
+
+[workspace.metadata.rustuse.release]
+publish = false
+versioning = "lockstep-0.x"
+first-publish-candidates = [
+    "use-document-store",
+    "use-key-value-store",
+    "use-wide-column",
+    "use-graph-store",
+    "use-cache-store",
+    "use-search-index",
+    "use-vector-store",
+    "use-timeseries-store",
+    "use-document-path",
+    "use-partition-key",
+    "use-consistency",
+    "use-change-event",
+    "use-nosql",
+]

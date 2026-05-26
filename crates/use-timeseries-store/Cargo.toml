@@ -1,0 +1,18 @@
+[package]
+name = "use-timeseries-store"
+description = "Time-series store modeling primitives for RustUse"
+publish = true
+authors.workspace = true
+version.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+readme = "README.md"
+documentation = "https://docs.rs/use-timeseries-store"
+keywords = ["nosql", "timeseries", "metric", "series"]
+categories = ["database", "data-structures", "development-tools"]
+
+[lints]
+workspace = true

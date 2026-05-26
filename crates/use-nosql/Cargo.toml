@@ -1,0 +1,74 @@
+[package]
+name = "use-nosql"
+description = "Feature-gated facade crate for RustUse NoSQL data modeling primitives"
+publish = true
+autoexamples = false
+authors.workspace = true
+version.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+readme = "README.md"
+documentation = "https://docs.rs/use-nosql"
+keywords = ["nosql", "document", "key-value", "cache", "vector"]
+categories = ["database", "data-structures", "development-tools"]
+
+[package.metadata.docs.rs]
+all-features = true
+
+[features]
+default = ["full"]
+document-store = ["dep:use-document-store"]
+key-value-store = ["dep:use-key-value-store"]
+wide-column = ["dep:use-wide-column"]
+graph-store = ["dep:use-graph-store"]
+cache-store = ["dep:use-cache-store"]
+search-index = ["dep:use-search-index"]
+vector-store = ["dep:use-vector-store"]
+timeseries-store = ["dep:use-timeseries-store"]
+document-path = ["dep:use-document-path"]
+partition-key = ["dep:use-partition-key"]
+consistency = ["dep:use-consistency"]
+change-event = ["dep:use-change-event"]
+full = [
+    "document-store",
+    "key-value-store",
+    "wide-column",
+    "graph-store",
+    "cache-store",
+    "search-index",
+    "vector-store",
+    "timeseries-store",
+    "document-path",
+    "partition-key",
+    "consistency",
+    "change-event",
+]
+
+[dependencies]
+use-document-store = { workspace = true, optional = true }
+use-key-value-store = { workspace = true, optional = true }
+use-wide-column = { workspace = true, optional = true }
+use-graph-store = { workspace = true, optional = true }
+use-cache-store = { workspace = true, optional = true }
+use-search-index = { workspace = true, optional = true }
+use-vector-store = { workspace = true, optional = true }
+use-timeseries-store = { workspace = true, optional = true }
+use-document-path = { workspace = true, optional = true }
+use-partition-key = { workspace = true, optional = true }
+use-consistency = { workspace = true, optional = true }
+use-change-event = { workspace = true, optional = true }
+
+[[test]]
+name = "facade"
+required-features = ["full"]
+
+[[example]]
+name = "nosql_basic_usage"
+path = "examples/basic_usage.rs"
+required-features = ["full"]
+
+[lints]
+workspace = true
