@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## [0.1.0](https://github.com/RustUse/use-nosql/releases/tag/use-nosql-v0.1.0) - 2026-05-26
+
+### Changed
+
+- Initial use-nosql workspace scaffold
+
 ### Added
 
 - Added the initial `use-nosql` multi-crate workspace scaffold.
